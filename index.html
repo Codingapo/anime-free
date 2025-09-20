@@ -2,10 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>ANime without ads</title>
+<title>Anime Without Ads</title>
 <style>
   html, body { height: 100%; margin: 0; }
-  #iframeContainer { width: 100%; height: 100%; font-family: Arial, sans-serif; font-size: 18px; text-align: center; display: flex; align-items: center; justify-content: center; }
+  #iframeContainer { 
+    width: 100%; height: 100%; 
+    font-family: Arial, sans-serif; 
+    font-size: 18px; 
+    text-align: center; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+  }
   #iframeContainer iframe { width: 100%; height: 100%; border: none; }
 </style>
 </head>
@@ -20,10 +28,11 @@
   var siteName     = "MyAnimeWorld";       
   var myColor      = "#00AEEF";            
   var myOwnPicture = "https://via.placeholder.com/150";
+  var myLogo       = "https://via.placeholder.com/120x60"; // ✅ New: logo support
   var live         = "yes";  
   var siteUrl      = "https://example.com";          
 
-  // Social links (kept intact)
+  // Social links
   var discord   = "https://discord.gg/F9CQJVdfe9";
   var github    = "https://github.com/";
   var telegram  = "https://t.me/+YcJ92fTKcbs3Y2Jk";
@@ -33,15 +42,17 @@
   // EMBED LOGIC
   // ----------------------------
   function showIframe() {
-    var iframeUrl = "https://animapocv.xo.je/" +
-                    "?siteName=" + encodeURIComponent(siteName) +
-                    "&pColor=" + encodeURIComponent(myColor) +
+    // Base URL = your PHP-powered domain
+    var iframeUrl = "https://legal.animapo/" +
+                    "?siteName="     + encodeURIComponent(siteName) +
+                    "&pColor="       + encodeURIComponent(myColor) +
                     "&myOwnPicture=" + encodeURIComponent(myOwnPicture) +
-                    "&discord=" + encodeURIComponent(discord) +
-                    "&github=" + encodeURIComponent(github) +
-                    "&telegram=" + encodeURIComponent(telegram) +
-                    "&instagram=" + encodeURIComponent(instagram) +
-                    "&live=" + encodeURIComponent(live) +
+                    "&logoUrl="      + encodeURIComponent(myLogo) +
+                    "&discord="      + encodeURIComponent(discord) +
+                    "&github="       + encodeURIComponent(github) +
+                    "&telegram="     + encodeURIComponent(telegram) +
+                    "&instagram="    + encodeURIComponent(instagram) +
+                    "&live="         + encodeURIComponent(live) +
                     "&beginnerSite=" + encodeURIComponent(siteUrl);
 
     var iframe = document.createElement("iframe");
